@@ -1004,7 +1004,7 @@ const data = {
 	},
   "contact_form_notif":[
     {
-      "en": ["Please insert at least your email and your message", "Your message has not been delivered!"],
+      "en": ["Please insert at least your email and your message", "Your message could not be delivered!"],
       "fr": ["Veuillez insérer au moins votre email et votre message", "Votre message n'a pas été livré!"]
     },
     {
