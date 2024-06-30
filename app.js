@@ -191,6 +191,7 @@ function openProjectDetails(projetc_id){
 }
 
 async function closeProjectDetails(){
+  stopVideo();
   project_popup.classList.add("inactive");
   project_popup.classList.remove("active");
   await sleep(500);
@@ -445,6 +446,12 @@ function checkNotScrollEnd(){
 window.addEventListener('scroll', checkScrollEnd);
 window.addEventListener('scroll', checkNotScrollEnd);
 
+function stopVideo() {
+  const video = document.getElementById('video-controller');
+  video.pause();
+  video.currentTime = 0;
+}
+
 // translator data
 const data = {
 	"menu": {
@@ -582,7 +589,7 @@ const data = {
 						"en":
             `
             <div class="demo-place-holder">
-              <video width="100%" controls>
+              <video width="100%" controls id="video-controller">
                 <source src="demos/dbshopping-demo-en.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
