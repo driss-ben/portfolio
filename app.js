@@ -464,7 +464,7 @@ const data = {
 			"normal": { "en": "Hello, ", "fr": "Salut, " },
 			"golden": { "en": "I'm", "fr": "Je suis" },
 			"sub_title": {
-				"en": ["A Fullstack Developer & A Designer", "A Person Who Loves What He Do!"],
+				"en": ["A Fullstack Developer & A Designer", "A Person Who Loves What He Do !"],
 				"fr": ["Un Développeur Fullstack & Un Designer", "Une Personne Qui Aime Ce Qu'Il Fait !"]
 			}
 		}
@@ -1012,8 +1012,8 @@ const data = {
       "fr": ["Message envoyé avec succès", "Merci!"]
     },
     {
-      "en": ["Something went wrong", "Please try again"],
-      "fr": ["Quelque chose a mal tourné", "Veuillez réessayer"]
+      "en": ["Something went wrong", "Please try again!"],
+      "fr": ["Quelque chose a mal tourné", "Veuillez réessayer!"]
     }
   ],
   "cv_path":{
