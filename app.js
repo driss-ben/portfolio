@@ -191,7 +191,7 @@ function openProjectDetails(projetc_id){
 }
 
 async function closeProjectDetails(){
-  stopVideo();
+  stopTheVideoIfExist();
   project_popup.classList.add("inactive");
   project_popup.classList.remove("active");
   await sleep(500);
@@ -446,8 +446,9 @@ function checkNotScrollEnd(){
 window.addEventListener('scroll', checkScrollEnd);
 window.addEventListener('scroll', checkNotScrollEnd);
 
-function stopVideo() {
+function stopTheVideoIfExist() {
   const video = document.getElementById('video-controller');
+  if(video==null) return;
   video.pause();
   video.currentTime = 0;
 }
@@ -463,8 +464,8 @@ const data = {
 			"normal": { "en": "Hello, ", "fr": "Salut, " },
 			"golden": { "en": "I'm", "fr": "Je suis" },
 			"sub_title": {
-				"en": ["A Fullstack Developer & A Designer", "A person who loves what he do!"],
-				"fr": ["Un développeur Fullstack et un designer"]
+				"en": ["A Fullstack Developer & A Designer", "A Person Who Loves What He Do!"],
+				"fr": ["Un Développeur Fullstack & Un Designer", "Une Personne Qui Aime Ce Qu'Il Fait !"]
 			}
 		}
 	},
@@ -619,7 +620,7 @@ const data = {
 						"fr":
             `
             <div class="demo-place-holder">
-              <video width="100%" controls>
+              <video width="100%" controls id="video-controller">
                 <source src="demos/dbshopping-demo-en.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -655,7 +656,7 @@ const data = {
 						"en": 
             `
             <div class="demo-place-holder">
-              <video width="60%" controls>
+              <video width="60%" controls id="video-controller">
                 <source src="demos/spot-manager-demo-en.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -687,7 +688,7 @@ const data = {
 						"fr": 
             `
             <div class="demo-place-holder">
-              <video width="60%" controls>
+              <video width="60%" controls id="video-controller">
                 <source src="demos/spot-manager-demo-en.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -875,7 +876,7 @@ const data = {
 						"en":
             `
             <div class="demo-place-holder">
-              <video width="100%" controls>
+              <video width="100%" controls id="video-controller">
                 <source src="demos/muat-demo-en.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -916,7 +917,7 @@ const data = {
 						"fr":
             `
             <div class="demo-place-holder">
-              <video width="100%" controls>
+              <video width="100%" controls id="video-controller">
                 <source src="demos/muat-demo-en.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -1023,4 +1024,3 @@ const data = {
 
 
 translate('en');
-
