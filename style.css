@@ -1370,6 +1370,11 @@ ul li p {
   align-items: center;
   padding: 5px 10px;
   font-weight: bolder;
+  text-align: center;
+}
+
+.popup-notification p{
+  text-align: center;
 }
 
 .popup .flex-column{
