@@ -1286,14 +1286,14 @@ ul li p {
 }
 
 .project-description-text ul{
-  padding: 5px 0 10px 35px;
+  padding: 5px 0 10px 30px;
 }
 
 .flex-container .project-description-text-container .project-description-text{
   padding: 15px 0 15px 15px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 800px) {  
   .flex-container{
     flex-direction: column;
   }
@@ -1306,6 +1306,14 @@ ul li p {
     min-height: 100px;
     margin-top: 20px;
     order: 2;
+  }
+
+  .flex-container .project-description-text-container .project-description-text{
+    padding: 15px 0;
+  }
+
+  .project-description-text ul{
+    padding: 5px 0 10px 20px;
   }
 }
 
