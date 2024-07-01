@@ -578,10 +578,6 @@ const data = {
             </div>
             `
 					},
-					"video_path": {
-						"en": "",
-						"fr": ""
-					},
           "display_in_column":true,
 				},
 				{
@@ -718,10 +714,6 @@ const data = {
             </div>         
             `
 					},
-					"video_path": {
-						"en": "",
-						"fr": ""
-					},
           "display_in_column":false,
 				},
 				{
@@ -781,10 +773,6 @@ const data = {
               </div>
             </div>
             `
-					},
-					"video_path": {
-						"en": "",
-						"fr": ""
 					},
           "display_in_column":true,
 				},
@@ -863,10 +851,6 @@ const data = {
               </div>
             </div>
             `
-					},
-					"video_path": {
-						"en": "",
-						"fr": ""
 					},
           "display_in_column":true,
 				},
@@ -955,10 +939,6 @@ const data = {
               </div>
             </div>            
             `
-					},
-					"video_path": {
-						"en": "",
-						"fr": ""
 					},
           "display_in_column":true,
 				}
