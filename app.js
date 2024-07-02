@@ -887,7 +887,7 @@ const data = {
                       <li><p>News Management: Publishing and managing news articles about the ministry.</p></li>
                       <li><p>Job Management: Posting and managing job opportunities.</p></li>
                       <li><p>Actor Management: Managing information about key personnel.</p></li>
-                      <li><p>Message and Complaint Management: Viewing and responding to messages and complaints from the public.</p></li>
+                      <li><p>Message and Complaint Management: Viewing messages and complaints.</p></li>
                       <li><p>Partner Management: Managing information and relationships with partners.</p></li>
                     </ul>
                   </li>
@@ -928,7 +928,7 @@ const data = {
                       <li><p>Gestion des Actualités : Publication et gestion des articles de presse concernant le ministère.</p></li>
                       <li><p>Gestion des Offres d'Emploi : Publication et gestion des opportunités d'emploi.</p></li>
                       <li><p>Gestion des Acteurs : Gestion des informations sur le personnel clé.</p></li>
-                      <li><p>Gestion des Messages et des Réclamations : Consultation et réponse aux messages et réclamations du public.</p></li>
+                      <li><p>Gestion des Messages et des Réclamations : Consultation des messages et les réclamations.</p></li>
                       <li><p>Gestion des Partenaires : Gestion des informations et des relations avec les partenaires.</p></li>
                     </ul>
                   </li>
