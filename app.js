@@ -1004,42 +1004,56 @@ const data = {
 
 
 translate('en');
+const ipifyUrl = 'https://api.ipify.org?format=json';
 
 function getVisitorInfo() {
-  fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-          const visitorIP = data.ip;
-          const visitorInfo = {
-              ip: visitorIP,
-              browser: navigator.userAgent,
-              referrer: document.referrer,
-              timestamp: new Date().toISOString(),
-              page: window.location.href
-          };
-          sendEmail(visitorInfo);
-      });
+    return fetch(ipifyUrl)
+        .then(response => response.json())
+        .then(data => {
+            const parser = new UAParser();
+            const result = parser.getResult();
+            return {
+                ip: data.ip,
+                browser: result.browser.name + ' ' + result.browser.version,
+                os: result.os.name + ' ' + result.os.version,
+                device: result.device.vendor ? result.device.vendor + ' ' + result.device.model : 'Desktop',
+                referrer: document.referrer,
+                timestamp: new Date().toISOString(),
+                page: window.location.href
+            };
+        });
 }
 
 function sendEmail(visitorInfo) {
-  const body = `
-      New Visit:
-      IP Address: ${visitorInfo.ip}
-      Browser: ${visitorInfo.browser}
-      Referrer: ${visitorInfo.referrer}
-      Timestamp: ${visitorInfo.timestamp}
-      Page URL: ${visitorInfo.page}
-  `;
+    const body = `
+        New Visit:
+        <br>
+        IP Address: ${visitorInfo.ip}
+        <br>
+        Browser: ${visitorInfo.browser}
+        <br>
+        OS: ${visitorInfo.os}
+        <br>
+        Device: ${visitorInfo.device}
+        <br>
+        Referrer: ${visitorInfo.referrer}
+        <br>
+        Timestamp: ${visitorInfo.timestamp}
+        <br>
+        Page URL: ${visitorInfo.page}
+    `;
 
-  Email.send({
-      Host: "smtp.elasticemail.com",
-      Username: "driss.portfolio@gmail.com",
-      Password: "954A84774653B98F2FCB38ED07CE2DA06753",
-      To: 'driss.benkhaldoun@gmail.com',
-      From: "benkhaldoun.driss@gmail.com",
-      Subject: "New visit",
-      Body: body
-  });
+    Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "driss.portfolio@gmail.com",
+        Password: "954A84774653B98F2FCB38ED07CE2DA06753",
+        To: 'driss.benkhaldoun@gmail.com',
+        From: "benkhaldoun.driss@gmail.com",
+        Subject: "New visit",
+        Body: body
+    });
 }
 
-window.onload = getVisitorInfo;
+document.addEventListener('DOMContentLoaded', function() {
+    getVisitorInfo().then(visitorInfo => sendEmail(visitorInfo));
+});
