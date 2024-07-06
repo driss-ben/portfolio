@@ -1024,51 +1024,71 @@ translate('en');
 const ipifyUrl = 'https://api.ipify.org?format=json';
 
 function getVisitorInfo() {
-    return fetch(ipifyUrl)
-        .then(response => response.json())
-        .then(data => {
-            const parser = new UAParser();
-            const result = parser.getResult();
-            return {
-                ip: data.ip,
-                browser: result.browser.name + ' ' + result.browser.version,
-                os: result.os.name + ' ' + result.os.version,
-                device: result.device.vendor ? result.device.vendor + ' ' + result.device.model : 'Desktop',
-                referrer: document.referrer,
-                timestamp: new Date().toISOString(),
-                page: window.location.href
-            };
-        });
+  return fetch(ipifyUrl)
+      .then(response => response.json())
+      .then(data => {
+          const parser = new UAParser();
+          const result = parser.getResult();
+          const memory = navigator.deviceMemory || 'N/A';
+          const concurrency = navigator.hardwareConcurrency || 'N/A';
+          const device = result.device.vendor ? `${result.device.vendor} ${result.device.model}` : 'Desktop';
+
+          return {
+              ip: data.ip,
+              browser: result.browser.name + ' ' + result.browser.version,
+              os: result.os.name + ' ' + result.os.version,
+              device: device,
+              referrer: document.referrer,
+              timestamp: new Date().toISOString(),
+              page: window.location.href,
+              screen: {
+                  width: screen.width,
+                  height: screen.height,
+                  availWidth: screen.availWidth,
+                  availHeight: screen.availHeight
+              },
+              memory: memory + ' GB',
+              concurrency: concurrency + ' logical processors'
+          };
+      });
 }
 
 function sendEmail(visitorInfo) {
-    const body = `
-        New Visit:
-        <br>
-        IP Address: ${visitorInfo.ip}
-        <br>
-        Browser: ${visitorInfo.browser}
-        <br>
-        OS: ${visitorInfo.os}
-        <br>
-        Device: ${visitorInfo.device}
-        <br>
-        Referrer: ${visitorInfo.referrer}
-        <br>
-        Timestamp: ${visitorInfo.timestamp}
-        <br>
-        Page URL: ${visitorInfo.page}
-    `;
+  const body = `
+      New Visit:
+      <br>
+      IP Address: ${visitorInfo.ip}
+      <br>
+      Browser: ${visitorInfo.browser}
+      <br>
+      OS: ${visitorInfo.os}
+      <br>
+      Device: ${visitorInfo.device}
+      <br>
+      Referrer: ${visitorInfo.referrer}
+      <br>
+      Timestamp: ${visitorInfo.timestamp}
+      <br>
+      Page URL: ${visitorInfo.page}
+      <br>
+      Screen Resolution: ${visitorInfo.screen.width} x ${visitorInfo.screen.height}
+      <br>
+      Available Screen Space: ${visitorInfo.screen.availWidth} x ${visitorInfo.screen.availHeight}
+      <br>
+      Device Memory: ${visitorInfo.memory}
+      <br>
+      Logical Processors: ${visitorInfo.concurrency}
+  `;
 
-    Email.send({
-        Host: "smtp.elasticemail.com",
-        Username: "driss.portfolio@gmail.com",
-        Password: "954A84774653B98F2FCB38ED07CE2DA06753",
-        To: 'driss.benkhaldoun@gmail.com',
-        From: "benkhaldoun.driss@gmail.com",
-        Subject: "New visit",
-        Body: body
-    });
+  Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "driss.portfolio@gmail.com",
+      Password: "954A84774653B98F2FCB38ED07CE2DA06753",
+      To: 'driss.benkhaldoun@gmail.com',
+      From: "benkhaldoun.driss@gmail.com",
+      Subject: "New visit",
+      Body: body
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
