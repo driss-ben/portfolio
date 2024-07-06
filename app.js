@@ -155,19 +155,19 @@ const sr=ScrollReveal({
   reset: false,
   origin:'top',
   distance:'60px',
-  duration:2000,
-  delay:200,
+  duration:1250,
+  delay:100,
 })
 
-sr.reveal('.img-container');
-sr.reveal('.about-container', {origin:'bottom'});
+sr.reveal('.img-container', {delay:500, duration:2000, distance:'80px' });
+sr.reveal('.about-container', {origin:'bottom',delay:500, duration:2000, distance:'80px'});
 sr.reveal('.about-me-card', {origin:'right'});
 sr.reveal('.personality-container', {origin:'left'});
 sr.reveal('.time-line-container', {delay:1000});
 sr.reveal('.projects-container .project-card', {interval:400, delay:100});
-sr.reveal('.skills-top-container', {origin:'left', delay:2000});
-sr.reveal('.skills-top-container .skill-item', {origin:'left',interval:300, delay:950, distance:'20px'});
-sr.reveal('.wrapper-message');
+sr.reveal('.skills-top-container', {origin:'left', delay:2100});
+sr.reveal('.skills-top-container .skill-item', {origin:'left',interval:150, delay:70, distance:'20px'});
+sr.reveal('.wrapper-message', {delay:500});
 
 function openProjectDetails(projetc_id){
 
@@ -480,8 +480,8 @@ const data = {
 			"normal": { "en": "Hello, ", "fr": "Salut, " },
 			"golden": { "en": "I'm", "fr": "Je suis" },
 			"sub_title": {
-				"en": ["A Fullstack Developer & A Designer", "A Person Who Loves What He Do !"],
-				"fr": ["Un Développeur Fullstack & Un Designer", "Une Personne Qui Aime Ce Qu'Il Fait !"]
+				"en": ["A Fullstack Developer & A Designer", "A person who loves what he does !"],
+				"fr": ["Un Développeur Fullstack & Un Designer", "Une personne qui aime ce qu'il fait !"]
 			}
 		}
 	},
