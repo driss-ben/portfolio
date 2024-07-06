@@ -1073,5 +1073,5 @@ function sendEmail(visitorInfo) {
 
 document.addEventListener('DOMContentLoaded', function() {
     getVisitorInfo().then(visitorInfo => sendEmail(visitorInfo));
-    hideContainer('loading-screen');
+    // hideContainer('loading-screen');
 });
