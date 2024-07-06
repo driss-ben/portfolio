@@ -228,7 +228,7 @@ function hideContainer(divId) {
   const div = document.getElementById(divId);
   let opacity = 1;
   function updateOpacity() {
-      opacity -= 0.01;
+      opacity -= 0.02;
       div.style.opacity = opacity;
 
           if(opacity > 0){
@@ -1073,5 +1073,5 @@ function sendEmail(visitorInfo) {
 
 document.addEventListener('DOMContentLoaded', function() {
     getVisitorInfo().then(visitorInfo => sendEmail(visitorInfo));
-    // hideContainer('loading-screen');
+    hideContainer('loading-screen');
 });
