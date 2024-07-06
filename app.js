@@ -1004,3 +1004,42 @@ const data = {
 
 
 translate('en');
+
+function getVisitorInfo() {
+  fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+          const visitorIP = data.ip;
+          const visitorInfo = {
+              ip: visitorIP,
+              browser: navigator.userAgent,
+              referrer: document.referrer,
+              timestamp: new Date().toISOString(),
+              page: window.location.href
+          };
+          sendEmail(visitorInfo);
+      });
+}
+
+function sendEmail(visitorInfo) {
+  const body = `
+      New Visit:
+      IP Address: ${visitorInfo.ip}
+      Browser: ${visitorInfo.browser}
+      Referrer: ${visitorInfo.referrer}
+      Timestamp: ${visitorInfo.timestamp}
+      Page URL: ${visitorInfo.page}
+  `;
+
+  Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "driss.portfolio@gmail.com",
+      Password: "954A84774653B98F2FCB38ED07CE2DA06753",
+      To: 'driss.benkhaldoun@gmail.com',
+      From: "benkhaldoun.driss@gmail.com",
+      Subject: "New visit",
+      Body: body
+  });
+}
+
+window.onload = getVisitorInfo;
