@@ -222,7 +222,23 @@ function showContainer(divId) {
           }
   }
   requestAnimationFrame(updateOpacity);
-  
+}
+
+function hideContainer(divId) {
+  const div = document.getElementById(divId);
+  let opacity = 1;
+  function updateOpacity() {
+      opacity -= 0.01;
+      div.style.opacity = opacity;
+
+          if(opacity > 0){
+              requestAnimationFrame(updateOpacity);
+          }
+          else{
+            div.style.display='none';
+          }
+  }
+  requestAnimationFrame(updateOpacity);
 }
 
 async function writeThanksMessage(){
@@ -1057,5 +1073,5 @@ function sendEmail(visitorInfo) {
 
 document.addEventListener('DOMContentLoaded', function() {
     getVisitorInfo().then(visitorInfo => sendEmail(visitorInfo));
-    document.getElementById('loading-screen').style.display = 'none';
+    hideContainer('loading-screen');
 });
