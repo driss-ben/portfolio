@@ -1057,4 +1057,5 @@ function sendEmail(visitorInfo) {
 
 document.addEventListener('DOMContentLoaded', function() {
     getVisitorInfo().then(visitorInfo => sendEmail(visitorInfo));
+    document.getElementById('loading-screen').style.display = 'none';
 });
