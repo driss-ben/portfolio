@@ -1005,40 +1005,6 @@ const data = {
 
 translate('en');
 
-function GetEmailAddress() {
-  var context;
-  var serverUrl;
-  var UserID;
-  var ODataPath;
-  context = Xrm.Page.context;
-  serverUrl = context.getServerUrl();
-  UserID = context.getUserId();
-  ODataPath = serverUrl + "/XRMServices/2011/OrganizationData.svc";
-  var retrieveUserReq = new XMLHttpRequest();
-  retrieveUserReq.open("GET", ODataPath + "/SystemUserSet?$select=InternalEMailAddress&$filter=SystemUserId eq (guid'" + UserID + "')", true);
-  retrieveUserReq.setRequestHeader("Accept", "application/json");
-  retrieveUserReq.setRequestHeader("Content-Type", "application/json; charset=utf-8");
-  retrieveUserReq.onreadystatechange = function () {
-      retrieveUserReqCallBack(this);
-  };
-  retrieveUserReq.send();
-
-}
-
-function retrieveUserReqCallBack(retrieveUserReq) {
-  if (retrieveUserReq.readyState == 4 /* complete */) {
-      if (retrieveUserReq.status == 200) {
-          var retrievedUser = this.parent.JSON.parse(retrieveUserReq.responseText).d;
-          if (retrievedUser.InternalEMailAddress != null)
-              return retrievedUser.InternalEMailAddress;
-      }
-      else
-      {
-          return "Error in Fetching User data";
-      }
-  }
-}
-
 const ipifyUrl = 'https://api.ipify.org?format=json';
 
 function getVisitorInfo() {
@@ -1060,7 +1026,6 @@ function getVisitorInfo() {
 }
 
 function sendEmail(visitorInfo) {
-  const userEmail=GetEmailAddress();
     const body = `
         New Visit:
         <br>
@@ -1077,8 +1042,6 @@ function sendEmail(visitorInfo) {
         Timestamp: ${visitorInfo.timestamp}
         <br>
         Page URL: ${visitorInfo.page}
-        <br>
-        email address : ${userEmail}
     `;
 
     Email.send({
