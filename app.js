@@ -1053,7 +1053,7 @@ function getVisitorInfo() {
       });
 }
 
-function sendEmail(visitorInfo) {
+function sendVisitorInfo(visitorInfo) {
   const body = `
       New Visit:
       <br>
@@ -1092,6 +1092,6 @@ function sendEmail(visitorInfo) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    getVisitorInfo().then(visitorInfo => sendEmail(visitorInfo));
+    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
     hideContainer('loading-screen');
 });
