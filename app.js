@@ -144,12 +144,6 @@ async function setRotationGradianAngle(){
 
 }
 
-document.addEventListener('DOMContentLoaded', setRotationGradianAngle);
-
-window.addEventListener('resize', function() {
-  setRotationGradianAngle();
-});
-
 
 const sr=ScrollReveal({
   reset: false,
@@ -327,13 +321,14 @@ async function translate(translateTo) {
   translateProjectCards(translateTo);
   translateLinks(translateTo);
   translateFirstSlide(translateTo);
-  setRotationGradianAngle();
   changeCVPath(translateTo);
   
   openPopUpButtons.forEach(button => {
     const actions=isEnglish? data.actions.en : data.actions.fr
     button.textContent = actions[3] ;
   });
+
+  setRotationGradianAngle();
 }
 
 
@@ -1094,4 +1089,9 @@ function sendVisitorInfo(visitorInfo) {
 document.addEventListener('DOMContentLoaded', function() {
     getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
     hideContainer('loading-screen');
+    setRotationGradianAngle();
+});
+
+window.addEventListener('resize', function() {
+  setRotationGradianAngle();
 });
