@@ -1092,6 +1092,6 @@ function sendVisitorInfo(visitorInfo) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
+    //getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
     hideContainer('loading-screen');
 });

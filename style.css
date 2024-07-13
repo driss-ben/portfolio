@@ -851,10 +851,10 @@ ul li p {
   box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.318);
 }
 .popup::-webkit-scrollbar{
-  width: 2px;
+  width: 3px;
 }
 .popup .popup-content {
-  padding: 30px 20px;
+  padding: 20px 10px;
   width: 100%;
   max-width: 95%;
   margin: 0 auto;
@@ -862,8 +862,8 @@ ul li p {
 }
 .popup .popup-content .popup-close-btn{
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 35px;
   width: 28px;
   height: 28px;
   text-align: center;
@@ -1066,6 +1066,10 @@ ul li p {
   .button-area span{
     margin: 20px 0 0;
     text-align: center;
+  }
+  
+  .main{
+    background-image: linear-gradient(90deg,white, black,#aaa) !important;
   }
 }
 
@@ -1316,52 +1320,6 @@ ul li p {
     padding: 5px 0 10px 20px;
   }
 }
-
-.heart{
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 30;
-}
-.fa-heart{
-    color: #000;
-    font-size:30px;
-    text-shadow:0 0 3px red, 0 0 5px red;
-    animation: heartbeat 0.8s infinite;
-    cursor: pointer;
-}
-
-@keyframes heartbeat {
-    0%{
-        transform: scale(1.10);
-    }
-    30%{
-        transform: scale(1.25);
-    }
-    60%{
-        transform: scale(1.5);
-    }
-}
-
-#message-container{
-  display: none;
-  opacity: 0;
-  position: fixed;
-  z-index: 100;
-  opacity: 1;
-  min-width: 100%;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: black !important;
-  font-size: 21px !important;
-  font-style: italic !important;
-}
-
-#thanks-message{
-  padding:10px;
-}
-
 
 .popup-notification{
   border: solid 2px black;
