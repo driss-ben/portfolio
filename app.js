@@ -438,6 +438,7 @@ function translateFirstSlide(translateTo){
 function changeCVPath(translateTo){
   const cv_path=data.cv_path[translateTo];
   cv_container.href=cv_path;
+  cv_container.download="CV-DRISS-"+translateTo.toUpperCase();
 }
 
 
