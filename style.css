@@ -303,8 +303,9 @@ body, button {
 
 .presentation-container{
   margin: 4rem 0;
-  width: 65%;
+  width: 60%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -334,12 +335,12 @@ body, button {
 }
 
 .presentation-container div{
-  margin: 10px 0;
+  margin: 13px 0;
 }
 
 .presentation-container .img-container{
   max-width: 35%;
-  min-width: 230px;
+  min-width: 250px;
 }
 
 .img-container img{
@@ -384,7 +385,8 @@ body, button {
 
 
 .about-container{
-  width: 70%;
+  min-width: 380px;
+  max-width: 380px;
   text-align: center;
   align-content: center;
   align-items: center;

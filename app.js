@@ -1019,7 +1019,7 @@ translate('en');
 
 const ipifyUrl = 'https://api.ipify.org?format=json';
 
-function getVisitorInfo() {
+async function getVisitorInfo() {
   return fetch(ipifyUrl)
       .then(response => response.json())
       .then(data => {
@@ -1088,9 +1088,9 @@ function sendVisitorInfo(visitorInfo) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
     hideContainer('loading-screen');
     setRotationGradianAngle();
+    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
 });
 
 window.addEventListener('resize', function() {
