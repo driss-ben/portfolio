@@ -6,7 +6,7 @@
 }
 
 		::-webkit-scrollbar-thumb {
-		  background: linear-gradient(to bottom,  #97672e, #f4ea9a, #97672e); /* You can change this color to your preferred color */
+		  background: linear-gradient(to bottom,  #97672e, #f4ea9a, #97672e);
       border-radius: 10px;
     }
 
@@ -853,8 +853,13 @@ ul li p {
   box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.318);
 }
 .popup::-webkit-scrollbar{
-  width: 3px;
+  width: 5px;
 }
+
+.popup::-webkit-scrollbar-thumb {
+  background:linear-gradient(to bottom,  black, white, black);
+}
+
 .popup .popup-content {
   padding: 20px 10px;
   width: 100%;
@@ -864,7 +869,7 @@ ul li p {
 }
 .popup .popup-content .popup-close-btn{
   position: absolute;
-  top: 15px;
+  top: 17.7px;
   right: 35px;
   width: 28px;
   height: 28px;
@@ -906,7 +911,7 @@ ul li p {
   transform: all 300ms ease-in-out 1000ms;
 }
 
-@keyframes popupAnimationOpen{
+/* @keyframes popupAnimationOpen{
   0% {
     width: 0%;
     height: 0%;
@@ -933,7 +938,7 @@ ul li p {
     width: 0%;
     height: 0%;
   }
-}
+} */
 /* end   popup */
 
 .wrapper-message{
@@ -1299,6 +1304,35 @@ ul li p {
   padding: 15px 0 15px 15px;
 }
 
+@keyframes popupAnimationOpen{
+  0% {
+    width: 0%;
+    height: 0%;
+  }
+  40% {
+    width: 96%;
+    height: 2px;
+  }
+  100% {
+    width: 96%;
+    height: 96%;
+  }
+}
+@keyframes popupAnimationClose{
+  0% {
+    width: 96%;
+    height: 96%;
+  }
+  40% {
+    width: 96%;
+    height: 2px;
+  }
+  100% {
+    width: 0%;
+    height: 0%;
+  }
+}
+
 @media (max-width: 800px) {  
   .flex-container{
     flex-direction: column;
@@ -1321,6 +1355,40 @@ ul li p {
   .project-description-text ul{
     padding: 5px 0 10px 20px;
   }
+
+  @keyframes popupAnimationOpen{
+    0% {
+      width: 0%;
+      height: 0%;
+    }
+    40% {
+      width: 100%;
+      height: 2px;
+    }
+    100% {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  @keyframes popupAnimationClose{
+    0% {
+      width: 100%;
+      height: 100vh;
+    }
+    40% {
+      width: 100%;
+      height: 2px;
+    }
+    100% {
+      width: 0%;
+      height: 0%;
+    }
+  }
+
+  .popup .popup-content .popup-close-btn{
+    right: 20px;
+  }
+   /* here */
 }
 
 .popup-notification{

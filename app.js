@@ -182,6 +182,7 @@ function openProjectDetails(projetc_id){
 
   project_popup.classList.remove("inactive");
   project_popup.classList.add("active");
+  document.documentElement.style.overflow = 'hidden';
 }
 
 async function closeProjectDetails(){
@@ -190,6 +191,7 @@ async function closeProjectDetails(){
   project_popup.classList.remove("active");
   await sleep(500);
   switch_button.classList.remove("hidden-by-opacity");
+  document.documentElement.style.overflow = 'auto';
 }
 
 
@@ -794,7 +796,7 @@ const data = {
 						"en": 
             `
             <div class="project-description-text-container">
-              <span>ENSA AGADIR - BUILDING CONSTRUCTOR</span>
+              <span>BUILDING CONSTRUCTOR</span>
               <div class="project-description-text">
                 <p>
                   One of my best experiences was working on the academic project "Building Constructor." I was part of a dedicated team of 5 students. Together, we developed a comprehensive web application using JEE and MySQL to manage a residential building construction business. The project involved extensive planning, requirement specification, and collaborative development.
@@ -830,7 +832,7 @@ const data = {
 						"fr":
             `
             <div class="project-description-text-container">
-              <span>ENSA AGADIR - BUILDING CONSTRUCTOR</span>
+              <span>BUILDING CONSTRUCTOR</span>
               <div class="project-description-text">
                 <p>
                   L'une de mes meilleures expériences a été de travailler sur le projet académique "Building Constructor". J'ai fait partie d'une équipe dévouée de 5 étudiants. Ensemble, nous avons développé une application web complète utilisant JEE et MySQL pour gérer une entreprise de construction de bâtiments résidentiels. Le projet a impliqué une planification approfondie, la spécification des exigences et un développement collaboratif.
@@ -878,7 +880,7 @@ const data = {
               </video>
             </div>
             <div class="project-description-text-container">
-              <span>Ribatis - Ministry of Urbanism Web Application</span>
+              <span>Ribatis - MUAT</span>
               <div class="project-description-text">
                 <p>
                   My first professional experience as a developer was at Ribatis in Casablanca, where I undertook the challenge of developing a web application for the Moroccan Ministry of Urbanism as a full-stack developer. I was responsible for the entire development of the application, which includes both a public side and an admin side.
@@ -919,7 +921,7 @@ const data = {
               </video>
             </div>
             <div class="project-description-text-container">
-              <span>Ribatis - Application Web pour le Ministère de l'Urbanisme</span>
+              <span>Ribatis - MUAT</span>
               <div class="project-description-text">
                 <p>
                   Ma première expérience professionnelle en tant que développeur a été chez Ribatis à Casablanca, où j'ai relevé le défi de développer une application web pour le Ministère Marocain de l'Urbanisme en tant que développeur full-stack. J'étais responsable de l'ensemble du développement de l'application, qui comprend une partie publique et une partie admin.
@@ -1090,7 +1092,7 @@ function sendVisitorInfo(visitorInfo) {
 document.addEventListener('DOMContentLoaded', function() {
     hideContainer('loading-screen');
     setRotationGradianAngle();
-    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
+    //getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
 });
 
 window.addEventListener('resize', function() {
