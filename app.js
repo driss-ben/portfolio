@@ -1092,7 +1092,7 @@ function sendVisitorInfo(visitorInfo) {
 document.addEventListener('DOMContentLoaded', function() {
     hideContainer('loading-screen');
     setRotationGradianAngle();
-    //getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
+    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
 });
 
 window.addEventListener('resize', function() {
