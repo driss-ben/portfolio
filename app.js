@@ -783,7 +783,7 @@ const data = {
                 </p>
               </div>
               <div class="popup-notification">
-                <p>La démo de cette expérience n'est pas disponible</p>
+                <p>La démonstration de cette expérience n'est pas disponible</p>
               </div>
             </div>
             `
@@ -861,7 +861,7 @@ const data = {
                 </p>
               </div>
               <div class="popup-notification">
-                <p>La démo de cette expérience n'est pas disponible</p>
+                <p>La démonstration de cette expérience n'est pas disponible</p>
               </div>
             </div>
             `
