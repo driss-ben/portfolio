@@ -373,8 +373,8 @@ body, button {
 
 
 .about-container{
-  min-width: 380px;
-  max-width: 380px;
+  min-width: 400px;
+  max-width: 420px;
   text-align: center;
   align-content: center;
   align-items: center;
