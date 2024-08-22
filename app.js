@@ -267,18 +267,28 @@ function sendEmail(){
     });   
   }
   else{
-    let body=`From : <br>
-    name : ${name_input.value} <br>
-    email : ${email_input.value} <br>
-    phone number : ${phone_input.value} <br>
-    website : ${website_input.value} <br>
-    <br>
-    ----------------------------------------
-    <br>
-    Message : <br>
-    ${message_input.value}
-    <br>
-    ----------------------------------------`
+    let body = `
+    <div style="font-family: Arial, sans-serif; color: #333;">
+      <div style="background-color: #f4f4f4; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 5px; font-size: 24px;">New Contact Form Submission</h2>
+        <p><strong>From:</strong></p>
+        <p style="margin: 10px 0;"><strong>Name:</strong> ${name_input.value}</p>
+        <p style="margin: 10px 0;"><strong>Email:</strong> ${email_input.value}</p>
+        <p style="margin: 10px 0;"><strong>Phone Number:</strong> ${phone_input.value}</p>
+        <p style="margin: 10px 0;"><strong>Website:</strong> ${website_input.value}</p>
+  
+        <hr style="border: none; border-top: 2px solid #ddd; margin: 20px 0;">
+  
+        <p><strong>Message:</strong></p>
+        <p style="background-color: #e6f7ff; padding: 15px; border-radius: 5px; border: 1px solid #b3e0ff; color: #004080;">
+          ${message_input.value}
+        </p>
+      </div>
+      <p style="color: #888; font-size: 12px; text-align: center; margin-top: 20px;">
+        This email was generated from my website contact form.
+      </p>
+    </div>
+  `;
 
     Email.send({
       Host : "smtp.elasticemail.com",
@@ -467,7 +477,6 @@ function stopTheVideoIfExist() {
   video.currentTime = 0;
 }
 
-// translator data
 const data = {
 	"menu": {
 		"en": ["HOME", "ABOUT ME", "EXPERIENCES", "CONTACT ME"],
@@ -1022,15 +1031,13 @@ translate('en');
 function formatDateToLocalTime() {
   const date = new Date();
   
-  // Get the date components
   const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-  
-  // Get the time components
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+
   const hours = String(date.getHours()).padStart(2, '0');
   const minutes = String(date.getMinutes()).padStart(2, '0');
   
-  // Format the date and time
+
   const formattedDate = `${day}-${month} | ${hours}-${minutes}`;
   
   return formattedDate;
@@ -1117,7 +1124,6 @@ window.addEventListener('resize', function() {
 
 
 
-// device maps
 const iosDeviceMapping = new Map([
   ["320x480", "IPhone 4S, 4, 3GS, 3G, 1st gen"],
   ["320x568", "IPhone 5, SE 1st Gen,5C, 5S"],
@@ -1147,7 +1153,6 @@ const desktopDeviceMapping = new Map([
 ]);
 
 
-// get device name for android
 const getAndroidDeviceName = () => {
   const androidUserAgentString = window.navigator.userAgent.slice(window.navigator.userAgent.indexOf("Android"));
   const androidDeviceName = androidUserAgentString.slice(androidUserAgentString.indexOf("; ") + 1, androidUserAgentString.indexOf(")"));
@@ -1158,7 +1163,6 @@ const getAndroidDeviceName = () => {
   return "Android";
 };
 
-// get device name for ios
 const getIosDeviceName = () => {
   const screenResolution =window.screen.width+'x'+window.screen.height;
   const device = iosDeviceMapping.get(screenResolution);
@@ -1168,18 +1172,15 @@ const getIosDeviceName = () => {
   return "Iphone";
 };
 
-// get device name for desktop
 const getDesktopDeviceName = () => {
   const platform = navigator?.userAgentData?.platform || navigator?.platform || "unknown";
   device = desktopDeviceMapping.get(platform) ?? "Unknown";
   return device;
 };
 
-// get device name utility
 function getDeviceName(){
   let device = "";
   
-  // check if mobile device
   const isMobileDevice = window.navigator.userAgent
     .toLowerCase()
     .includes("mobi");
