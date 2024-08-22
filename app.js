@@ -1076,30 +1076,27 @@ async function getVisitorInfo() {
 
 function sendVisitorInfo(visitorInfo) {
   const body = `
-      New Visit:
-      <br>
-      IP Address: ${visitorInfo.ip}
-      <br>
-      Browser: ${visitorInfo.browser}
-      <br>
-      OS: ${visitorInfo.os}
-      <br>
-      Device: ${visitorInfo.device}
-      <br>
-      Referrer: ${visitorInfo.referrer}
-      <br>
-      Timestamp: ${visitorInfo.timestamp}
-      <br>
-      Page URL: ${visitorInfo.page}
-      <br>
-      Screen Resolution: ${visitorInfo.screen.width} x ${visitorInfo.screen.height}
-      <br>
-      Available Screen Space: ${visitorInfo.screen.availWidth} x ${visitorInfo.screen.availHeight}
-      <br>
-      Device Memory: ${visitorInfo.memory}
-      <br>
-      Logical Processors: ${visitorInfo.concurrency}
-  `;
+  <div style="font-family: Arial, sans-serif; color: #333;">
+    <div style="background-color: #f4f4f4; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+      <h4 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 5px; font-size: 24px;display:block;">New Visit Information</h4>
+      
+      <p style="margin: 10px 0;"><strong>IP Address:</strong> ${visitorInfo.ip}</p>
+      <p style="margin: 10px 0;"><strong>Browser:</strong> ${visitorInfo.browser}</p>
+      <p style="margin: 10px 0;"><strong>OS:</strong> ${visitorInfo.os}</p>
+      <p style="margin: 10px 0;"><strong>Device:</strong> ${visitorInfo.device}</p>
+      <p style="margin: 10px 0;"><strong>Referrer:</strong> ${visitorInfo.referrer}</p>
+      <p style="margin: 10px 0;"><strong>Timestamp:</strong> ${visitorInfo.timestamp}</p>
+      <p style="margin: 10px 0;"><strong>Page URL:</strong> ${visitorInfo.page}</p>
+      <p style="margin: 10px 0;"><strong>Screen Resolution:</strong> ${visitorInfo.screen.width} x ${visitorInfo.screen.height}</p>
+      <p style="margin: 10px 0;"><strong>Available Screen Space:</strong> ${visitorInfo.screen.availWidth} x ${visitorInfo.screen.availHeight}</p>
+      <p style="margin: 10px 0;"><strong>Device Memory:</strong> ${visitorInfo.memory} GB</p>
+      <p style="margin: 10px 0;"><strong>Logical Processors:</strong> ${visitorInfo.concurrency}</p>
+    </div>
+    <p style="color: #888; font-size: 12px; text-align: center; margin-top: 20px;">
+      This email was generated automatically from visitor data.
+    </p>
+  </div>
+`;
 
   Email.send({
       Host: "smtp.elasticemail.com",
