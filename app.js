@@ -270,7 +270,7 @@ function sendEmail(){
     let body = `
     <div style="font-family: Arial, sans-serif; color: #333;">
       <div style="background-color: #f4f4f4; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
-        <h2 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 5px; font-size: 24px;">New Contact Form Submission</h2>
+        <h4 style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 5px; font-size: 24px; display:block;">New Contact Form Submission</h4>
         <p><strong>From:</strong></p>
         <p style="margin: 10px 0;"><strong>Name:</strong> ${name_input.value}</p>
         <p style="margin: 10px 0;"><strong>Email:</strong> ${email_input.value}</p>
