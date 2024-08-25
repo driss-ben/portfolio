@@ -553,16 +553,17 @@ const data = {
                 <p>We leveraged a diverse set of technologies, including:</p>
                 <ul>
                   <li><p>SpringBoot</p></li>
-                  <li><p>Spring Framework</p></li>
-                  <li><p>Java EE (JEE)</p></li>
+                  <li><p>RabbitMQ</p></li>
+                  <li><p>Java EE</p></li>
                   <li><p>JUnit</p></li>
+                  <li><p>Mockito</p></li>
                   <li><p>DevOps Practices</p></li>
                 </ul>
                 <p>
                   One of my key contributions was in transforming some functionalities from the monolithic project to the micro-services. This transition was underpinned by a robust hexagonal architecture, which facilitated greater scalability and maintainability. I also took on responsibilities for platform maintenance and rigorous integration testing, ensuring the system's reliability and performance. Furthermore, I have participated in migrating Rakuten's projects from BitBucket to GitHub, streamlining our version control processes and enhancing collaboration across the team.
                 </p>
                 <p>
-                  This project allowed me to develop and refine my technical skills, particularly in SpringBoot, Spring, JEE, JUnit, and DevOps practices. The practical experience I gained from this project has prepared me well for future challenges in the tech industry, equipping me with both the technical expertise and the collaborative skills necessary for success.
+                  This project allowed me to develop and refine my technical skills. The practical experience I gained from this project has prepared me well for future challenges in the tech industry, equipping me with both the technical expertise and the collaborative skills necessary for success.
                 </p>
               </div>
             
@@ -582,16 +583,17 @@ const data = {
                 <p>Nous avons utilisé une gamme variée de technologies, notamment :</p>
                 <ul>
                   <li><p>SpringBoot</p></li>
-                  <li><p>Spring Framework</p></li>
-                  <li><p>Java EE (JEE)</p></li>
+                  <li><p>RabbitMQ</p></li>
+                  <li><p>Java EE</p></li>
                   <li><p>JUnit</p></li>
+                  <li><p>Mockito</p></li>
                   <li><p>Pratiques DevOps</p></li>
                 </ul>
                 <p>
                   Une de mes contributions clés a été de transformer quelques fonctionalites du projet monolithique vers des micro-services. Cette transition reposait sur une architecture hexagonale robuste, favorisant une plus grande scalabilité et maintenabilité. J'ai également pris en charge la maintenance de la plateforme et des tests d'intégration rigoureux, assurant la fiabilité et les performances du système. De plus, j'ai participé à la migration des projets de Rakuten de BitBucket vers GitHub, simplifiant nos processus de contrôle de version et renforçant la collaboration au sein de l'équipe.
                 </p>
                 <p>
-                  Ce projet m'a permis de développer et d'affiner mes compétences techniques, notamment en SpringBoot, Spring, JEE, JUnit et pratiques DevOps. L'expérience pratique acquise m'a bien préparé pour les défis futurs dans l'industrie technologique, en me dotant à la fois de l'expertise technique et des compétences collaboratives nécessaires pour réussir.
+                  Ce projet m'a permis de développer et d'affiner mes compétences techniques. L'expérience pratique acquise m'a bien préparé pour les défis futurs dans l'industrie technologique, en me dotant à la fois de l'expertise technique et des compétences collaboratives nécessaires pour réussir.
                 </p>
               </div>
               
@@ -998,8 +1000,8 @@ const data = {
 		{ "en": "My Skills", "fr": "Mes Compétences" }
 	],
 	"project_durations": {
-		"en": ["On going...","In just three weeks!", "4 months", "3 months", "5 months", "In 2 months!"],
-		"fr": ["En cours...","En trois semaines!", "4 mois", "3 mois", "5 mois", "En 2 mois!"]
+		"en": ["6 months","In just three weeks!", "4 months", "3 months", "5 months", "In 2 months!"],
+		"fr": ["6 mois","En trois semaines!", "4 mois", "3 mois", "5 mois", "En 2 mois!"]
 	},
 	"actions": {
 		"en": ["Download CV", "Contact Me", "Send ➤", "see details"],
