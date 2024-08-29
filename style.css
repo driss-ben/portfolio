@@ -747,12 +747,6 @@ ul li p {
 }
 
 /* start popup */
-.popup-container{
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  display: none;
-}
 
 .popup{
   position: fixed;
@@ -1455,5 +1449,20 @@ ul li p {
 
   .links {
     width: 100%;
+  }
+}
+
+.shining-text {
+  color: #ffffff;
+  animation: shine 1s infinite alternate;
+}
+
+@keyframes shine {
+  0% {
+      color:  rgb(120, 120, 120);
+  }
+  100% {
+      color: white;
+      text-shadow: 0 0 20px #ffffff;
   }
 }

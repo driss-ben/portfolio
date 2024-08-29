@@ -18,6 +18,7 @@ const project_description_container=document.getElementById('project-description
 const project_popup=document.getElementById('project-details');
 const openPopUpButtons = document.querySelectorAll('.open-popup-button');
 const cv_container=document.getElementById('cv-link');
+const frButton=document.getElementById('fr-button')
 
 async function toggleSlides(){
   footer.classList.toggle("hidden");
@@ -163,8 +164,9 @@ sr.reveal('.skills-top-container', {origin:'left', delay:2100});
 sr.reveal('.skills-top-container .skill-item', {origin:'left',interval:150, delay:70, distance:'20px'});
 sr.reveal('.wrapper-message', {delay:500});
 
-function openProjectDetails(projetc_id){
+function openProjectDetails(projetc_id, button){
 
+  button.classList.remove("shining-text");
   const selectedProject=data.slide_three.contents.projects[projetc_id];
 
   if(selectedProject.display_in_column){
@@ -196,6 +198,7 @@ async function closeProjectDetails(){
 
 
 switch_button.addEventListener('click', function() {
+  frButton.classList.remove("shining-text")
   isEnglish=!isEnglish;
   let translateTo=isEnglish?'en':'fr';
   this.classList.toggle('switch-active');
@@ -1009,16 +1012,16 @@ const data = {
 	},
   "contact_form_notif":[
     {
-      "en": ["Please insert at least your email and your message", "Your message could not be delivered!"],
-      "fr": ["Veuillez insérer au moins votre email et votre message", "Votre message n'a pas été livré!"]
+      "en": ["Your message could not be delivered!", "Please insert at least your email and your message"],
+      "fr": ["Votre message n'a pas été livré!", "Veuillez insérer au moins votre email et votre message"]
     },
     {
-      "en": ["Message sent successfully", "Thank you!"],
-      "fr": ["Message envoyé avec succès", "Merci!"]
+      "en": ["Thank you!", "Message sent successfully"],
+      "fr": ["Merci!", "Message envoyé avec succès"]
     },
     {
-      "en": ["Something went wrong", "Please try again!"],
-      "fr": ["Quelque chose a mal tourné", "Veuillez réessayer!"]
+      "en": ["Please try again!", "Something went wrong"],
+      "fr": ["Veuillez réessayer!", "Quelque chose a mal tourné"]
     }
   ],
   "cv_path":{
