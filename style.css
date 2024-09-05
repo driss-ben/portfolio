@@ -1106,10 +1106,12 @@ ul li p {
   overflow: hidden;
   cursor: pointer;
   font-size: 10.5px;
+  font-weight: bolder;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.318);
   z-index: 20;
   color: gray;
   transition: 0.5s;
+  font-style: italic;
 }
 
 .switch-button:before{
@@ -1454,7 +1456,7 @@ ul li p {
 
 .shining-text {
   color: #ffffff;
-  animation: shine 1s infinite alternate;
+  animation: shine 0.75s infinite alternate;
 }
 
 @keyframes shine {
@@ -1463,6 +1465,6 @@ ul li p {
   }
   100% {
       color: white;
-      text-shadow: 0 0 20px #ffffff;
+      text-shadow: 0 0 30px #ffffff;
   }
 }
