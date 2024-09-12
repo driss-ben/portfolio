@@ -264,8 +264,7 @@ function sendEmail(){
   if(email_input.value=="" || message_input.value=="" ){
     const messages=getContactFormNotif(0);
     Swal.fire({
-      title: messages[0],
-      text: messages[1],
+      text: messages[0],
       icon: "warning"
     });   
   }
@@ -1012,8 +1011,8 @@ const data = {
 	},
   "contact_form_notif":[
     {
-      "en": ["Your message could not be delivered!", "Please insert at least your email and your message"],
-      "fr": ["Votre message n'a pas été livré!", "Veuillez insérer au moins votre email et votre message"]
+      "en": ["Please insert at least your email and your message"],
+      "fr": ["Veuillez insérer au moins votre email et votre message"]
     },
     {
       "en": ["Thank you!", "Message sent successfully"],
