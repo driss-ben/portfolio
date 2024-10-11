@@ -295,9 +295,9 @@ function sendEmail(){
     Email.send({
       Host : "smtp.elasticemail.com",
       Username : "driss.portfolio@gmail.com",
-      Password : "954A84774653B98F2FCB38ED07CE2DA06753",
-      To : 'driss.benkhaldoun@gmail.com',
-      From : "benkhaldoun.driss@gmail.com",
+      Password : "5AA46C7D3A6F55EEB3E3DAE6A6CD716C0B99",
+      To : 'benkhaldoun.driss@gmail.com',
+      From : email_input.value,
       Subject : "A new message from my portfolio",
       Body : body
     }).then(
@@ -497,8 +497,8 @@ const data = {
 	"slide_two": {
 		"contents": {
 			"intro": {
-				"en": "As an ambitious 5th-year student specializing in computer security and technology at INSA CENTRE VAL DE LOIRE, I am on the hunt for an exhilarating opportunity. I am eager to channel my fervor and expertise in computer development into an experience that not only highlights my passion but also propels me to new heights of innovation",
-				"fr": "En tant qu'étudiant ambitieux en 5ème année spécialisé en sécurité informatique et en technologie à l'INSA CENTRE VAL DE LOIRE, je suis à la recherche d'une opportunité exaltante. Je suis impatient de canaliser ma ferveur et mon expertise en développement informatique dans une expérience qui non seulement met en lumière ma passion mais me propulse également vers de nouveaux sommets d'innovation"
+				"en": "As a passionate Software Engineer and Cybersecurity Engineer, with academic foundations from both INSA Centre Val de Loire and ENSA Agadir, I am now seeking new challenges. I am eager to leverage my expertise in computer development and cybersecurity to contribute to innovative projects that push the boundaries of technology while further honing my skills in a dynamic and forward-thinking environment.",
+				"fr": "En tant qu'ingénieur logiciel et ingénieur en cybersécurité, avec des formations académiques à l'INSA Centre Val de Loire et à l'ENSA Agadir, je suis désormais à la recherche de nouveaux défis. Je suis impatient de mettre à profit mon expertise en développement informatique et en cybersécurité pour contribuer à des projets innovants qui repoussent les limites de la technologie, tout en perfectionnant mes compétences dans un environnement dynamique et avant-gardiste."
 			},
 			"personality": {
 				"en": ["Creativity", "Flexibility", "Honest", "Motivation", "Punctuality", "Leadership", "Emotional intelligence", "Attention to detail", "Problem solver", "Diligent", "Team spirit","Curiosity"],
@@ -1105,9 +1105,9 @@ function sendVisitorInfo(visitorInfo) {
   Email.send({
       Host: "smtp.elasticemail.com",
       Username: "driss.portfolio@gmail.com",
-      Password: "954A84774653B98F2FCB38ED07CE2DA06753",
-      To: 'driss.benkhaldoun@gmail.com',
-      From: "benkhaldoun.driss@gmail.com",
+      Password: "5AA46C7D3A6F55EEB3E3DAE6A6CD716C0B99",
+      To: 'benkhaldoun.driss@gmail.com',
+      From: "driss.benkhaldoun@gmail.com",
       Subject: "New visit",
       Body: body
   });
