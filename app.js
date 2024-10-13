@@ -1167,7 +1167,7 @@ function getDeviceName(){
       device = getIosDeviceName();
     }
   } else {
-    const device = getDesktopDeviceName();
+    device = getDesktopDeviceName();
   }
 
   return device;
