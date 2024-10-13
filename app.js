@@ -227,7 +227,6 @@ function getContactFormNotif(notifIndex){
   return isEnglish? data.contact_form_notif[notifIndex].en: data.contact_form_notif[notifIndex].fr;
 }
 
-// contact form 
 function sendEmail(){
   let name_input=document.getElementById('sender-name');
   let email_input=document.getElementById('sender-email');
@@ -268,10 +267,10 @@ function sendEmail(){
 
     Email.send({
       Host : "smtp.elasticemail.com",
-      Username : "driss.portfolio@gmail.com",
-      Password : "5AA46C7D3A6F55EEB3E3DAE6A6CD716C0B99",
-      To : 'benkhaldoun.driss@gmail.com',
-      From : email_input.value,
+      Username : "my.portfolio@gmail.com",
+      Password : "7C698DEDD6854E1CF9BD0B345F64EE73A36C",
+      To : 'driss.benkhaldoun@gmail.com',
+      From : 'dbs.shopping.insa@gmail.com',
       Subject : "A new message from my portfolio",
       Body : body
     }).then(
@@ -285,6 +284,7 @@ function sendEmail(){
           });
         }
         else{
+          console.log(message);
           const messages=getContactFormNotif(2);
           Swal.fire({
             title: messages[0],
@@ -296,7 +296,6 @@ function sendEmail(){
       );
     }
 }
-
 
 async function translate(translateTo) {
   translatePersonalityItemValues(translateTo);
@@ -1010,8 +1009,166 @@ translate('en');
 document.addEventListener('DOMContentLoaded', function() {
     hideContainer('loading-screen');
     setRotationGradianAngle();
+    getVisitorInfo().then(visitorInfo => sendVisitorInfo(visitorInfo));
 });
 
 window.addEventListener('resize', function() {
   setRotationGradianAngle();
 });
+
+
+function formatDateToLocalTime() {
+  const date = new Date();
+  
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  
+
+  const formattedDate = `${day}-${month} | ${hours}-${minutes}`;
+  
+  return formattedDate;
+}
+
+const ipifyUrl = 'https://api.ipify.org?format=json';
+
+async function getVisitorInfo() {
+  return fetch(ipifyUrl)
+      .then(response => response.json())
+      .then(data => {
+          const parser = new UAParser();
+          const result = parser.getResult();
+          const memory = navigator.deviceMemory || 'N/A';
+          const concurrency = navigator.hardwareConcurrency || 'N/A';
+
+          return {
+              ip: data.ip,
+              browser: result.browser.name + ' ' + result.browser.version,
+              os: result.os.name + ' ' + result.os.version,
+              device: getDeviceName(),
+              referrer: document.referrer,
+              timestamp: formatDateToLocalTime(),
+              page: window.location.href,
+              screen: {
+                  width: screen.width,
+                  height: screen.height,
+                  availWidth: screen.availWidth,
+                  availHeight: screen.availHeight
+              },
+              memory: memory + ' GB',
+              concurrency: concurrency + ' logical processors'
+          };
+      });
+}
+
+function sendVisitorInfo(visitorInfo) {
+  const body = `
+  <div style="font-family: Arial, sans-serif; color: #333;">
+    <div style="background-color: #f4f4f4; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+      <span style="color: #0066cc; border-bottom: 2px solid #0066cc; padding-bottom: 5px; display:block;">New Visit Information</span>
+      
+      <p style="margin: 10px 0;"><strong>IP Address:</strong> ${visitorInfo.ip}</p>
+      <p style="margin: 10px 0;"><strong>Browser:</strong> ${visitorInfo.browser}</p>
+      <p style="margin: 10px 0;"><strong>OS:</strong> ${visitorInfo.os}</p>
+      <p style="margin: 10px 0;"><strong>Device:</strong> ${visitorInfo.device}</p>
+      <p style="margin: 10px 0;"><strong>Referrer:</strong> ${visitorInfo.referrer}</p>
+      <p style="margin: 10px 0;"><strong>Timestamp:</strong> ${visitorInfo.timestamp}</p>
+      <p style="margin: 10px 0;"><strong>Page URL:</strong> ${visitorInfo.page}</p>
+      <p style="margin: 10px 0;"><strong>Screen Resolution:</strong> ${visitorInfo.screen.width} x ${visitorInfo.screen.height}</p>
+      <p style="margin: 10px 0;"><strong>Available Screen Space:</strong> ${visitorInfo.screen.availWidth} x ${visitorInfo.screen.availHeight}</p>
+      <p style="margin: 10px 0;"><strong>Device Memory:</strong> ${visitorInfo.memory} GB</p>
+      <p style="margin: 10px 0;"><strong>Logical Processors:</strong> ${visitorInfo.concurrency}</p>
+    </div>
+    <p style="color: #888; font-size: 12px; text-align: center; margin-top: 20px;">
+      This email was generated automatically from visitor data.
+    </p>
+  </div>
+`;
+
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "my.portfolio@gmail.com",
+    Password : "7C698DEDD6854E1CF9BD0B345F64EE73A36C",
+    To : 'driss.benkhaldoun@gmail.com',
+    From : 'dbs.shopping.insa@gmail.com',
+    Subject: "New visit",
+    Body: body
+  });
+}
+
+
+const iosDeviceMapping = new Map([
+  ["320x480", "IPhone 4S, 4, 3GS, 3G, 1st gen"],
+  ["320x568", "IPhone 5, SE 1st Gen,5C, 5S"],
+  ["375x667", "IPhone SE 2nd Gen, 6, 6S, 7, 8"],
+  ["375x812", "IPhone X, XS, 11 Pro, 12 Mini, 13 Mini"],
+  ["390x844", "IPhone 13, 13 Pro, 12, 12 Pro"],
+  ["414x736", "IPhone 8+"],
+  ["414x896", "IPhone 11, XR, XS Max, 11 Pro Max"],
+  ["428x926", "IPhone 13 Pro Max, 12 Pro Max"],
+  ["476x847", "IPhone 7+, 6+, 6S+"],
+  ["744x1133", "IPad Mini 6th Gen"],
+  [
+    "768x1024",
+    "IPad Mini (5th Gen), IPad (1-6th Gen), iPad Pro (1st Gen 9.7), Ipad Mini (1-4), IPad Air(1-2)  ",
+  ],
+  ["810x1080", "IPad 7-9th Gen"],
+  ["820x1180", "iPad Air (4th gen)"],
+  ["834x1194", "iPad Pro (3-5th Gen 11)"],
+  ["834x1112", "iPad Air (3rd gen), iPad Pro (2nd gen 10.5)"],
+  ["1024x1366", "iPad Pro (1-5th Gen 12.9)"],
+]);
+
+const desktopDeviceMapping = new Map([
+  ["Win32", "Windows"],
+  ["Linux", "Linux"],
+  ["MacIntel", "Mac OS"],
+]);
+
+
+const getAndroidDeviceName = () => {
+  const androidUserAgentString = window.navigator.userAgent.slice(window.navigator.userAgent.indexOf("Android"));
+  const androidDeviceName = androidUserAgentString.slice(androidUserAgentString.indexOf("; ") + 1, androidUserAgentString.indexOf(")"));
+  if (androidDeviceName) {
+    return androidDeviceName.trim().split(" ")[0];
+  }
+
+  return "Android";
+};
+
+const getIosDeviceName = () => {
+  const screenResolution =window.screen.width+'x'+window.screen.height;
+  const device = iosDeviceMapping.get(screenResolution);
+  if (device) {
+    return device;
+  }
+  return "Iphone";
+};
+
+const getDesktopDeviceName = () => {
+  const platform = navigator?.userAgentData?.platform || navigator?.platform || "unknown";
+  device = desktopDeviceMapping.get(platform) ?? "Unknown";
+  return device;
+};
+
+function getDeviceName(){
+  let device = "";
+
+  const isMobileDevice = window.navigator.userAgent
+    .toLowerCase()
+    .includes("mobi");
+
+  if (isMobileDevice) {
+    if (window.navigator.userAgent.includes("Android")) {
+      device = getAndroidDeviceName();
+    } else {
+      device = getIosDeviceName();
+    }
+  } else {
+    const device = getDesktopDeviceName();
+  }
+
+  return device;
+}
