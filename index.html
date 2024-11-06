@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Driss's portfolio</title>
+    <style>
+      #loading-screen {
+        position: fixed;
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100vh;
+        max-height: 100vh;
+        top: 0;
+        left: 0;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      #loading-screen img{
+        max-width: 200px;
+        max-height: 200px;
+      }
+    </style>
+    <link rel="shortcut icon" href="imgs/fav.png">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+
+  </head>
+  <body>
+    <div id="loading-screen">
+      <img src="imgs/loading.gif" alt="Loading...">
+    </div>
+    <div class="loading-blured"></div>
+    <div class="background-container"></div>
+    <div class="navbar blured">
+      <div class="menu">
+        <h3 class="logo">software<span> engineer</span></h3>
+        <div class="hamburger-menu" onclick="toggleSlides()">
+          <div class="bar" id="bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main-container">
+        <div id="slide-one-placeholder"></div>
+        <div class="main one" id="slide-one">
+          <div class="overlay">
+            <div class="presentation-container">
+              <div class="img-container">
+                <img src="imgs/img.png">
+              </div>
+              <div class="about-container">
+                <p><span id="greetings"></span> <span class="golden-text" id="who"></span></p>
+                <h1><span class="golden-text">Driss</span> BENKHALDOUN</h1>
+                <p>
+                  <span id="typing-description"></span>
+                  <span id="cursor">_</span>              
+                </p>
+                <div class="actions-button-container">
+                  <a download="CV-DRISS-EN" class="transabled-button" href="CV.pdf" id="cv-link"></a> 
+                  <a class="transabled-button" onclick="justScrool(3)"></a>
+                </div>
+                <div class="social-network">
+                  <a href="https://www.linkedin.com/in/driss-benkhaldoun-561356234" target="_blank"><div class="hexagon-container" id="in-link"></div></a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="mouse-icon"><div class="wheel"></div></div> -->
+          </div>
+        </div>
+        <div id="slide-two-placeholder"></div>
+        <div class="main two" id="slide-two">
+          <div class="overlay">
+            <div class="slide-content">
+              <div class="slide-title center-text big-slide-title">
+                <span class="normal-text"></span> <span class="golden-text"></span>
+                <br>
+                <span class="subtitle"></span>
+              </div> 
+              <div class="two-elements">
+                <div class="about-me-card presentation-element">
+                  <h3 class="head small-title"></h3>
+                  <div>
+                    <p id="my-intro"></p>                  
+                  </div>
+                </div>
+                <div class="personality-container presentation-element">
+                  <h3 class="head small-title"></h3>
+                  <div class="personality" id="personality-container">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="time-line-container presentation-element">
+                <h3 class="head small-title"></h3>
+                <div class="time-line" >
+                    <ul id="academic-journey">
+                        <li>
+                            <h3 class="heading">LAK Casablanca</h3>
+                            <p></p>
+                            <span class="date"></span>
+                            <span class="circle"></span>
+                        </li>
+                        <li>
+                            <h3 class="heading">ENSA AGADIR</h3>
+                            <p></p>
+                            <span class="date"></span>
+                            <span class="circle"></span>
+                        </li>
+                        <li>
+                            <h3 class="heading">INSA CVL</h3>
+                            <p></p>
+                            <span class="date"></span>
+                            <span class="circle"></span>
+                        </li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="slide-three-placeholder"></div>
+        <div class="main three" id="slide-three">
+          <div class="overlay">
+            <div class="slide-content">
+              <div class="slide-title center-text big-slide-title">
+                <span class="normal-text"></span> <span class="golden-text"></span>
+                <br>
+                <span class="subtitle"></span>
+              </div>    
+              <div class="projects-container">
+                <div class="project-card">
+                  <div class="project-image-container">
+                    <img src="imgs/rakuten.png">
+                  </div>
+                  <div class="project-card-bottom">
+                    <div class="project-title golden-text">C2C TEAM</div>
+                    <div class="project-at">
+                      Rakuten France
+                      <br/>
+                      <span class="project-duration"></span>
+                    </div>
+                    <div>
+                      <button class="black-button open-popup-button shining-text" onclick="openProjectDetails(0, this);">see details</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-card">
+                  <div class="project-image-container">
+                    <img src="imgs/dbshopping.png">
+                  </div>
+                  <div class="project-card-bottom">
+                    <div class="project-title golden-text">DBSHOPPING</div>
+                    <div class="project-at">
+                      INSA CVL
+                      <br/>
+                      <span class="project-duration"></span>
+                    </div>
+                    <div>
+                      <button class="black-button open-popup-button shining-text" onclick="openProjectDetails(1, this);">see details</button>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="project-card">
+                  <div class="project-image-container">
+                    <img src="imgs/spot-manager.png">
+                  </div>
+                  <div class="project-card-bottom">
+                    <div class="project-title golden-text">SPOT MANAGER</div>
+                    <div class="project-at">
+                      Spot In Leads
+                      <br/>
+                      <span class="project-duration"></span>
+                    </div>
+                    <div>
+                      <button class="black-button open-popup-button shining-text" onclick="openProjectDetails(2, this);">see details</button>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="project-card">
+                  <div class="project-image-container">
+                    <img src="imgs/lune-parc.png">
+                  </div>
+                  <div class="project-card-bottom">
+                    <div class="project-title golden-text">LUNE PARC</div>
+                    <div class="project-at">
+                      Nava Business
+                      <br/>
+                      <span class="project-duration"></span>
+                    </div>
+                    <div>
+                      <button class="black-button open-popup-button shining-text" onclick="openProjectDetails(3, this);">see details</button>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="project-card">
+                  <div class="project-image-container">
+                    <img src="imgs/building-constructor.png">
+                  </div>
+                  <div class="project-card-bottom">
+                    <div class="project-title golden-text">BUILDING CONSTRUCTOR</div>
+                    <div class="project-at">
+                      ENSA AGADIR
+                      <br/>
+                      <span class="project-duration"></span>
+                    </div>
+                    <div>
+                      <button class="black-button open-popup-button shining-text" onclick="openProjectDetails(4, this);">see details</button>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="project-card">
+                  <div class="project-image-container">
+                    <img src="imgs/muat.png">
+                  </div>
+                  <div class="project-card-bottom">
+                    <div class="project-title golden-text">MUAT</div>
+                    <div class="project-at">
+                      Ribatis
+                      <br/>
+                      <span class="project-duration"></span>
+                    </div>
+                    <div>
+                      <button class="black-button open-popup-button shining-text" onclick="openProjectDetails(5, this);">see details</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>  
+              <div class="skills-top-container">
+                <div class="slide-title">
+                  <span class="golden-text small-title"></span>
+                </div> 
+                <div class="skills-container">
+                  <div class="skill-item"><span class="golden-text">1.</span> JAVA</div>
+                  <div class="skill-item"><span class="golden-text">2.</span> C/C++/C#</div>
+                  <div class="skill-item"><span class="golden-text">3.</span> Python</div>
+                  <div class="skill-item"><span class="golden-text">4.</span> PHP</div>
+                  <div class="skill-item"><span class="golden-text">5.</span> JavaScript</div>
+                  <div class="skill-item"><span class="golden-text">6.</span> Dart</div>
+                  <div class="skill-item"><span class="golden-text">7.</span> SpringBoot</div>
+                  <div class="skill-item"><span class="golden-text">8.</span> JEE</div>
+                  <div class="skill-item"><span class="golden-text">9.</span> Flutter</div>
+                  <div class="skill-item"><span class="golden-text">10.</span> .NET</div>
+                  <div class="skill-item"><span class="golden-text">11.</span> React</div>
+                  <div class="skill-item"><span class="golden-text">12.</span> Angular</div>
+                  <div class="skill-item"><span class="golden-text">13.</span> SQL</div>
+                  <div class="skill-item"><span class="golden-text">14.</span> MariaDB</div>
+                  <div class="skill-item"><span class="golden-text">15.</span> MongoDB</div>
+                  <div class="skill-item"><span class="golden-text">16.</span> GitHub</div>
+                  <div class="skill-item"><span class="golden-text">17.</span> BitBucket</div>
+                  <div class="skill-item"><span class="golden-text">18.</span> UML</div>
+                  <div class="skill-item"><span class="golden-text">19.</span> HTML</div>
+                  <div class="skill-item"><span class="golden-text">20.</span> CSS</div>
+                  <div class="skill-item"><span class="golden-text">21.</span> Jenkins</div>
+                  <div class="skill-item"><span class="golden-text">22.</span> Jira</div>
+                </div>
+              </div>      
+            </div>
+          </div>
+        </div>
+        <div id="slide-four-placeholder"></div>
+        <div class="main four" id="slide-four">
+          <div class="overlay">
+            <div class="slide-content">
+              <div class="slide-title center-text big-slide-title">
+                <span class="normal-text"></span> <span class="golden-text"></span>
+                <br>
+                <span class="subtitle"></span>
+              </div> 
+              <div class="wrapper-message">
+                <div class="form" id="form">
+                  <div class="dbl-field">
+                    <div class="field">
+                      <input type="text" name="name" id="sender-name" placeholder="Enter your name" class="input-form">
+                      <i class='fas fa-user'></i>
+                    </div>
+                    <div class="field">
+                      <input type="text" name="email" id="sender-email" placeholder="Enter your email" class="input-form">
+                      <i class='fas fa-envelope'></i>
+                    </div>
+                  </div>
+                  <div class="dbl-field">
+                    <div class="field">
+                      <input type="text" name="phone" id="sender-phone" placeholder="Enter your phone" class="input-form">
+                      <i class='fas fa-phone-alt'></i>
+                    </div>
+                    <div class="field">
+                      <input type="text" name="website" id="sender-website" placeholder="Enter your website" class="input-form">
+                      <i class='fas fa-globe'></i>
+                    </div>
+                  </div>
+                  <div class="message">
+                    <textarea placeholder="Write your message" id="sender-message" name="message" class="input-form"></textarea>
+                    <i class="material-icons">message</i>
+                  </div>
+                  <div class="button-area">
+                    <button class="transabled-button" onclick="sendEmail();">Send ➤</button>
+                    <span></span>
+                  </div>
+                </div>
+              </div>      
+            </div>
+          </div>
+        </div>
+        <div class="footer" id="footer">
+          <div class="footer-logo">
+            <img src="imgs/fav.png"> <span class="golden-text">you Dream it, we Build it!</span>
+          </div>
+          <div class="rights" id="copyright-container">
+          </div>
+        </div>
+      </div>
+
+      <div class="links" id="links-container">
+        <ul>
+          <li>
+            <a onclick="scrollToSlide(0)" onmouseover="hoverLink('slide-one')" onmouseleave="hoverLink('slide-one')" style="--i: 0.05s;">Home</a>
+          </li>
+          <li>
+            <a onclick="scrollToSlide(1)" onmouseover="hoverLink('slide-two')" onmouseleave="hoverLink('slide-two')" style="--i: 0.1s;">About Me</a>
+          </li>
+          <li>
+            <a onclick="scrollToSlide(2)" onmouseover="hoverLink('slide-three')" onmouseleave="hoverLink('slide-three')" style="--i: 0.15s;">Experiences</a>
+          </li>
+          <li>
+            <a onclick="scrollToSlide(3)" onmouseover="hoverLink('slide-four')" onmouseleave="hoverLink('slide-four')" style="--i: 0.2s;">Contact Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="popup" id="project-details">
+      <div class="popup-content">
+        <div class="popup-close-btn" onclick="closeProjectDetails();">&times;</div>
+        <div class="flex-container" id="project-description">
+        </div>
+      </div>
+    </div>
+  <div class="switch-button" id="switch-button">
+		<div class="switch-item">En</div>
+		<div class="switch-item shining-text" id="fr-button">Fr</div>
+	</div>
+    <script src="scrollreveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.31/ua-parser.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+      document.getElementById('copyright-container').innerHTML = `&copy; ${new Date().getFullYear()} copyrights`;
+    </script>
+  </body>
+</html>
