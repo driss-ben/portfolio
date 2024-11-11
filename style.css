@@ -1100,12 +1100,12 @@ ul li p {
   position: fixed;
   display: flex;
   align-items: center;
-  height: 1.7rem;
+  height: 1.85rem;
   background-color: black;
   border-radius: 2rem;
   overflow: hidden;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bolder;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.318);
   z-index: 20;
@@ -1128,7 +1128,7 @@ ul li p {
 
 .switch-item{
   position: relative;
-  padding: 1rem 0.75rem;
+  padding: 1rem 0.85rem;
   transition: 0.3s;
 }
 .switch-button.switch-active:before{
