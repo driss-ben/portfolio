@@ -820,36 +820,6 @@ ul li p {
   transform: all 300ms ease-in-out 1000ms;
 }
 
-/* @keyframes popupAnimationOpen{
-  0% {
-    width: 0%;
-    height: 0%;
-  }
-  40% {
-    width: 96%;
-    height: 2px;
-  }
-  100% {
-    width: 96%;
-    height: 96%;
-  }
-}
-@keyframes popupAnimationClose{
-  0% {
-    width: 96%;
-    height: 96%;
-  }
-  40% {
-    width: 96%;
-    height: 2px;
-  }
-  100% {
-    width: 0%;
-    height: 0%;
-  }
-} */
-/* end   popup */
-
 .wrapper-message{
   width: 85%;
   max-width: 700px;
@@ -956,75 +926,6 @@ ul li p {
   padding: 19px 45px !important;
 }
 
-
-
-/* .mouse-icon {
-  border: 2px solid #fff;
-  border-radius: 16px;
-  height: 40px;
-  width: 24px;
-  display: block;
-  z-index: 10;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 100px;
-  margin: auto;
-}
-.mouse-icon .wheel {
-  position: relative;
-  border-radius: 10px;
-  background: #fff;
-  width: 2px;
-  height: 6px;
-  top: 4px;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-animation-name: drop;
-  -webkit-animation-duration: 1.4s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-play-state: running;
-  animation-name: drop;
-  animation-duration: 1.4s;
-  animation-timing-function: linear;
-  animation-delay: 0s;
-  animation-iteration-count: infinite;
-  animation-play-state: running;
-}
-
-@-webkit-keyframes drop {
-  0% {
-    top: 5px;
-    opacity: 0;
-  }
-  30% {
-    top: 10px;
-    opacity: 1;
-  }
-  100% {
-    top: 20px;
-    opacity: 0;
-  }
-}
-
-@keyframes drop {
-  0% {
-    top: 5px;
-    opacity: 0;
-  }
-  30% {
-    top: 10px;
-    opacity: 1;
-  }
-  100% {
-    top: 20px;
-    opacity: 0;
-  }
-}  */
-
-/* .folating-buttons-container{
   position: fixed;
   bottom: 30px;
   right: 30px;
