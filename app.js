@@ -158,11 +158,11 @@ sr.reveal('.img-container', {delay:500, duration:2000, distance:'80px' });
 sr.reveal('.about-container', {origin:'bottom',delay:500, duration:2000, distance:'80px'});
 sr.reveal('.about-me-card', {origin:'right'});
 sr.reveal('.personality-container', {origin:'left'});
-sr.reveal('.time-line-container', {delay:1000});
-sr.reveal('.projects-container .project-card', {interval:400, delay:100});
-sr.reveal('.skills-top-container', {origin:'left', delay:2100});
-sr.reveal('.skills-top-container .skill-item', {origin:'left',interval:150, delay:70, distance:'20px'});
-sr.reveal('.wrapper-message', {delay:500});
+sr.reveal('.time-line-container', {delay:700});
+sr.reveal('.projects-container .project-card', {interval:200, delay:70});
+sr.reveal('.skills-top-container', {origin:'left', delay:500});
+sr.reveal('.skills-top-container .skill-item', {origin:'left',interval:80, delay:50, distance:'20px'});
+sr.reveal('.wrapper-message', {delay:400});
 
 function openProjectDetails(projetc_id, button){
 
@@ -1014,19 +1014,3 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('resize', function() {
   setRotationGradianAngle();
 });
-
-
-function formatDateToLocalTime() {
-  const date = new Date();
-  
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  
-
-  const formattedDate = `${day}-${month} | ${hours}-${minutes}`;
-  
-  return formattedDate;
-}
