@@ -462,8 +462,8 @@ const data = {
 			"normal": { "en": "Hello, ", "fr": "Salut, " },
 			"golden": { "en": "I'm", "fr": "Je suis" },
 			"sub_title": {
-				"en": ["A Fullstack Developer & A Designer", "A person who loves what he does !"],
-				"fr": ["Un Développeur Fullstack & Un Designer", "Une personne qui aime ce qu'il fait !"]
+				"en": ["A Software Engineer & A Designer", "A person who loves what he does !"],
+				"fr": ["Un Ingénieur logiciel & Un Designer", "Une personne qui aime ce qu'il fait !"]
 			}
 		}
 	},
