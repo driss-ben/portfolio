@@ -504,10 +504,10 @@ const data = {
 						"fr": "Septembre 2022"
 					},
 					"description": {
-						"en": "Currently pursuing cybersecurity studies at the National Institute of Applied Sciences of Center Val de Loire in a dual diploma program (2 Years)",
-						"fr": "Actuellement en études de cybersécurité à l'Institut National des Sciences Appliquées de Centre Val de Loire dans un programme de double diplôme (2 ans)"
+						"en": "Cybersecurity engineering student at the National Institute of Applied Sciences of Center Val de Loire in a dual diploma program (2 Years)",
+						"fr": "Étudiant en cybersécurité à l'Institut National des Sciences Appliquées de Centre Val de Loire dans un programme de double diplôme (2 ans)"
 					}
-				}				
+				},
 			]
 		}
 	},
