@@ -12,13 +12,13 @@ const slide_three=document.getElementById("slide-three");
 const slide_four=document.getElementById("slide-four");
 const links=document.getElementById("links-container");
 var links_displayed=false;
-let isEnglish=true;
+let isEnglish=false;
 var translatorHidden=false;
 const project_description_container=document.getElementById('project-description');
 const project_popup=document.getElementById('project-details');
 const openPopUpButtons = document.querySelectorAll('.open-popup-button');
 const cv_container=document.getElementById('cv-link');
-const frButton=document.getElementById('fr-button')
+const enButton=document.getElementById('en-button')
 
 async function toggleSlides(){
   footer.classList.toggle("hidden");
@@ -198,7 +198,7 @@ async function closeProjectDetails(){
 
 
 switch_button.addEventListener('click', function() {
-  frButton.classList.remove("shining-text")
+  enButton.classList.remove("shining-text")
   isEnglish=!isEnglish;
   let translateTo=isEnglish?'en':'fr';
   this.classList.toggle('switch-active');
@@ -1002,8 +1002,8 @@ const data = {
   }
 };
 
-
 translate('en');
+translate('fr');
 
 
 document.addEventListener('DOMContentLoaded', function() {
