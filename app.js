@@ -538,7 +538,7 @@ const data = {
                   One of my key contributions was in transforming some functionalities from the monolithic project to the micro-services. This transition was underpinned by a robust hexagonal architecture, which facilitated greater scalability and maintainability. I also took on responsibilities for platform maintenance and rigorous integration testing, ensuring the system's reliability and performance. Furthermore, I have participated in migrating Rakuten's projects from BitBucket to GitHub, streamlining our version control processes and enhancing collaboration across the team.
                 </p>
                 <p>
-                  This project allowed me to develop and refine my technical skills. The practical experience I gained from this project has prepared me well for future challenges in the tech industry, equipping me with both the technical expertise and the collaborative skills necessary for success.
+                  This project helped me to develop and refine my technical skills. The practical experience I gained from this project has prepared me well for future challenges in the tech industry, equipping me with both the technical expertise and the collaborative skills necessary for success.
                 </p>
               </div>
             
@@ -568,7 +568,7 @@ const data = {
                   Une de mes contributions clés a été de transformer quelques fonctionalites du projet monolithique vers des micro-services. Cette transition reposait sur une architecture hexagonale robuste, favorisant une plus grande scalabilité et maintenabilité. J'ai également pris en charge la maintenance de la plateforme et des tests d'intégration rigoureux, assurant la fiabilité et les performances du système. De plus, j'ai participé à la migration des projets de Rakuten de BitBucket vers GitHub, simplifiant nos processus de contrôle de version et renforçant la collaboration au sein de l'équipe.
                 </p>
                 <p>
-                  Ce projet m'a permis de développer et d'affiner mes compétences techniques. L'expérience pratique acquise m'a bien préparé pour les défis futurs dans l'industrie technologique, en me dotant à la fois de l'expertise technique et des compétences collaboratives nécessaires pour réussir.
+                  Ce projet m'a aidé à développer et d'affiner mes compétences techniques. L'expérience pratique acquise m'a bien préparé pour les défis futurs dans l'industrie technologique, en me dotant à la fois de l'expertise technique et des compétences collaboratives nécessaires pour réussir.
                 </p>
               </div>
               
@@ -843,7 +843,7 @@ const data = {
                   Notre effort collaboratif impliquait des discussions régulières et des processus de prise de décision. Chaque fois qu'un membre de l'équipe suggérait une nouvelle fonctionnalité, nous en discutions collectivement la faisabilité et l'impact potentiel avant de prendre une décision. Cette approche garantissait que toutes les perspectives étaient prises en compte et que les meilleures solutions possibles étaient mises en œuvre. En plus de mon rôle de développeur, j'ai également pris la responsabilité de concevoir les supports marketing de notre projet. J'ai conçu des flyers, un logo et des cartes de visite pour l'équipe et le projet, montrant mes compétences en design graphique.
                 </p>
                 <p>
-                  Building Constructor met en avant notre capacité à travailler ensemble efficacement sur un projet à grande échelle, en abordant à la fois les aspects techniques et de gestion d'une entreprise de construction. Ce projet nous a permis de développer des compétences en analyse des besoins, documentation, développement web full-stack et design graphique.
+                  Building Constructor met en avant notre capacité à travailler ensemble efficacement sur un projet à grande échelle, en abordant à la fois les aspects techniques et de gestion d'une entreprise de construction. Ce projet nous a aidé à développer des compétences en analyse des besoins, documentation, développement web full-stack et design graphique.
                 </p>
               </div>
               <div class="popup-notification">
