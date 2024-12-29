@@ -73,7 +73,7 @@ let phrases=["A Fullstack Developer & A Designer"];
 let phraseToDisplay=0;
 
 const tw=document.getElementById('typing-description');
-let sleepTime=70;
+let sleepTime=40;
 
 
 const writeLoop=async()=>{
