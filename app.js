@@ -69,7 +69,7 @@ function sleep(ms){
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-let phrases=["A Fullstack Developer & A Designer"];
+let phrases=["A Software Engineer"];
 let phraseToDisplay=0;
 
 const tw=document.getElementById('typing-description');
@@ -442,6 +442,7 @@ function checkNotScrollEnd(){
       translatorHidden=false;
   }
 }
+
 window.addEventListener('scroll', checkScrollEnd);
 window.addEventListener('scroll', checkNotScrollEnd);
 
@@ -462,8 +463,8 @@ const data = {
 			"normal": { "en": "Hello, ", "fr": "Salut, " },
 			"golden": { "en": "I'm", "fr": "Je suis" },
 			"sub_title": {
-				"en": ["A Software Engineer & A Designer", "A person who loves what he does !"],
-				"fr": ["Un Ingénieur logiciel & Un Designer", "Une personne qui aime ce qu'il fait !"]
+				"en": ["A Software Engineer", "A person who loves what he does !"],
+				"fr": ["Un Ingénieur logiciel", "Une personne qui aime ce qu'il fait !"]
 			}
 		}
 	},
