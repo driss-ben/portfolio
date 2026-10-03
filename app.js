@@ -135,7 +135,7 @@ async function setRotationGradianAngle(){
       if(index%2==1){
         angle=180-angle;
       }
-      const gradient = 'linear-gradient('+angle+'deg, white, black,#aaa)';
+      const gradient = 'linear-gradient('+angle+'deg,  #666, #000, #000, #666)';
       slide.style.backgroundImage = gradient;      
     }
 

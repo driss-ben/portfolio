@@ -1200,7 +1200,7 @@ ul li p {
   }
   
   .main{
-    background-image: linear-gradient(90deg,white, black,#aaa) !important;
+    background-image: linear-gradient(90deg, #666, #000, #000, #666) !important;
   }
 }
 
